@@ -1,0 +1,287 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+
+  min-height: 100vh;
+
+  background:
+    linear-gradient(rgba(5, 5, 5, .92),
+      rgba(95, 43, 43, 0.92)),
+    url("https://wallpaperaccess.com/full/3813477.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 40px;
+
+  color: white;
+
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* TITULO */
+
+h1 {
+
+  font-size: 3.5rem;
+
+  text-transform: uppercase;
+
+  letter-spacing: 4px;
+
+  color: #b02a35;
+
+  margin-bottom: 35px;
+
+  text-align: center;
+
+  white-space: nowrap;
+
+  text-shadow:
+    0 0 8px rgba(255, 70, 85, .4);
+}
+
+
+/* SELECT */
+
+#seleccionar_leyendas {
+
+  width: 450px;
+
+  padding: 18px;
+
+  border-radius: 15px;
+
+  border: 2px solid #ff4655;
+
+  background: #1a1a1a;
+
+  color: white;
+
+  font-family: 'Orbitron', sans-serif;
+
+  font-size: 18px;
+
+  cursor: pointer;
+
+  margin-bottom: 40px;
+
+  transition: .3s;
+
+  box-shadow:
+    0 0 15px rgba(255, 70, 85, .4);
+}
+
+#seleccionar_leyendas:hover {
+
+  transform: scale(1.03);
+
+  box-shadow:
+    0 0 25px #ff4655;
+}
+
+#seleccionar_leyendas option {
+
+  background: #1a1a1a;
+
+  color: white;
+}
+
+/* TARJETA */
+
+#tarjeta_leyenda {
+
+  width: 1200px;
+
+  min-height: 450px;
+
+  background:
+    linear-gradient(135deg,
+      rgba(55, 55, 55, .95),
+      rgba(20, 20, 20, .95));
+
+  border: 5px solid white;
+
+  border-radius: 25px;
+
+  padding: 25px;
+
+  display: grid;
+
+  grid-template-columns: 450px 1fr;
+
+  grid-template-rows: 130px 1fr;
+
+  gap: 25px;
+
+  position: relative;
+
+  overflow: hidden;
+
+  transition: .4s;
+
+  box-shadow:
+    inset 0 0 20px rgba(255, 255, 255, .05),
+    0 0 20px rgba(255, 255, 255, .2);
+}
+
+/* DETALLES FUTURISTAS */
+
+#tarjeta_leyenda::before {
+
+  content: "";
+
+  position: absolute;
+
+  top: 15px;
+  left: 15px;
+
+  width: 120px;
+  height: 120px;
+
+  border-top: 4px solid rgba(255, 255, 255, .4);
+  border-left: 4px solid rgba(255, 255, 255, .4);
+}
+
+#tarjeta_leyenda::after {
+
+  content: "";
+
+  position: absolute;
+
+  bottom: 15px;
+  right: 15px;
+
+  width: 120px;
+  height: 120px;
+
+  border-right: 4px solid rgba(255, 255, 255, .4);
+  border-bottom: 4px solid rgba(255, 255, 255, .4);
+}
+
+/* IMAGEN */
+
+#imagen {
+
+  grid-column: 1;
+
+  grid-row: 1 / 3;
+
+  width: 100%;
+
+  height: 390px;
+
+  object-fit: cover;
+
+  border-radius: 20px;
+
+  border: 3px solid rgba(255, 255, 255, .2);
+
+  box-shadow:
+    0 0 25px rgba(255, 255, 255, .15);
+}
+
+/* NOMBRE */
+
+#nombre {
+
+  grid-column: 2;
+
+  grid-row: 1;
+
+  align-self: end;
+
+  font-size: 5rem;
+
+  font-weight: 900;
+
+  letter-spacing: 5px;
+
+  text-transform: uppercase;
+
+  color: inherit;
+
+  text-shadow:
+    0 0 5px currentColor;
+
+  margin-bottom: 10px;
+}
+
+/* DESCRIPCION */
+
+#descripcion {
+
+  grid-column: 2;
+
+  grid-row: 2;
+
+  font-size: 1.8rem;
+
+  line-height: 1.8;
+
+  color: #dcdcdc;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  padding-top: 10px;
+
+  max-width: 90%;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1300px) {
+
+  #tarjeta_leyenda {
+
+    width: 95%;
+  }
+}
+
+@media(max-width:900px) {
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  #seleccionar_leyendas {
+    width: 90%;
+  }
+
+  #tarjeta_leyenda {
+
+    display: flex;
+
+    flex-direction: column;
+  }
+
+  #imagen {
+
+    width: 100%;
+
+    height: 300px;
+  }
+
+  #nombre {
+
+    font-size: 3rem;
+  }
+
+  #descripcion {
+
+    font-size: 1.2rem;
+  }
+}
